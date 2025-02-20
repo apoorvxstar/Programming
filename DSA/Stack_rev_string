@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class Stack{
+    private:
+    char stk[100];
+    int top = -1;
+    
+    public:
+    void Push(char x){
+        stk[++top] = x;
+    };
+    
+    void Pop(){
+        top--;
+    };
+    
+    char Top(){
+        char x = stk[top];
+        return x;
+    };
+    
+    bool isEmpty(){
+        if(top == -1){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    };
+};
+
+int main() {
+    char arr[10];
+    
+    cin >> arr;
+    
+    int len = strlen(arr);
+    
+    Stack rev;
+    
+    for(int i=0; i<len; i++){
+    rev.Push(arr[i]);
+    };
+    
+    for(int i=0; i<10; i++){
+    arr[i] = rev.Top();
+    rev.Pop();
+    };
+
+    cout << arr;    
+    return 0;
+}
