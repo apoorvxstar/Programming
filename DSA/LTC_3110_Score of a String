@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int scoreOfString(string s) {
+    int sum=0;
+    int diff=0;
+    int n=1;  
+
+    for (n; n < s.length(); n++){
+        diff = s[n]-s[n-1];
+        if(diff<0){
+            diff= -(diff);
+        }
+        sum=sum+diff;
+    }
+    return sum;    
+    }
+};
