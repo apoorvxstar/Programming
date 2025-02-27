@@ -1,0 +1,36 @@
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        
+        int len = size(height);
+
+        int TW = 0, H = 0;
+
+        int tallestL = 0, tallestR = 0;
+
+        int left = 0, right = len-1;
+
+        while(left<right){
+            if(height[left] <= height[right]){
+                
+                if(height[left]>tallestL){
+                    tallestL = height[left];                    
+                }
+                else{
+                    TW = TW + tallestL-height[left]; 
+                }
+                left++;
+            }
+            else{    
+                if(height[right]>tallestR){
+                    tallestR = height[right];
+                }
+                else{
+                TW = TW + tallestR-height[right]; 
+                }
+                right--;
+            }
+        }
+        return TW;
+    }
+};
