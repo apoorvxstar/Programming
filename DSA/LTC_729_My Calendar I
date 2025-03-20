@@ -1,0 +1,30 @@
+class MyCalendar {
+private:
+        vector<int> arr_event;
+
+public:
+    MyCalendar() {
+        arr_event.reserve(1000);
+    }
+    
+    bool book(int startTime, int endTime) {
+
+        for(int i=0; i<arr_event.size(); i+=2){
+
+            if(!(endTime<=arr_event[i] || startTime>=arr_event[i+1])){
+            return false;
+            }      
+        }
+
+        arr_event.push_back(startTime);
+        arr_event.push_back(endTime);
+  
+        return true;    
+    }
+};
+
+/**
+ * Your MyCalendar object will be instantiated and called as such:
+ * MyCalendar* obj = new MyCalendar();
+ * bool param_1 = obj->book(startTime,endTime);
+ */
