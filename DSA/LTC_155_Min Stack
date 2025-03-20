@@ -2,11 +2,11 @@ class MinStack {
 private:
         vector<int> stk;
         vector<int> minstk;
-        int min;
 
 public:
     MinStack() {
-
+        stk.reserve(1000);
+        minstk.reserve(1000);
     }
     
     void push(int val) {
