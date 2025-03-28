@@ -9,12 +9,12 @@ int main() {
         cin>>arr[i];    
     }
     
-    for(int j=0;j<10;j++){
-        for(int i=0;i<10;i++){
-            if(arr[i]>arr[i+1] && i<10){
-                swap = arr[i+1];
-                arr[i+1] = arr[i];
-                arr[i] = swap;
+    for(int m=0;m<10;m++){
+        for(int n=0;n<10;n++){
+            if(arr[n]>arr[n+1] && n<10){
+                swap = arr[n+1];
+                arr[n+1] = arr[n];
+                arr[n] = swap;
             }
             else{
                 continue;
