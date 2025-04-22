@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 
+
 class GGS{
     set<string> brand;
     set<string> model;
